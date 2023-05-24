@@ -1,9 +1,4 @@
 - name: Play variable
-  hosts: localhost
-
-  vars:
-   URL: play.example.com
-  task:
-   -name: print play variable
-   ansible.builtin.debug:
-     msg: URL = {{ URL }}
+  hosts: all
+  roles:
+    - "{{ role_name }}
