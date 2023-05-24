@@ -1,4 +1,4 @@
 - name: Play variable
   hosts: all
   roles:
-    - "{{ role_name }}
+    - "{{ role_name }}"
