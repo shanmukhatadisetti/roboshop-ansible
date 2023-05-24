@@ -1,3 +1,3 @@
-- name: print mysql
+- name: print mongodb
   ansible.builtin.debug:
-    msg: mysql
+    msg: mongodb
