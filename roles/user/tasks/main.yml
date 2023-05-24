@@ -1,0 +1,3 @@
+- name: print user
+  ansible.builtin.debug:
+    msg: user
