@@ -7,8 +7,8 @@
 - name: install Erlang and Rabbitmq
   ansible.builtin.yum:
    name:
-      - rabbitmq-server
-      - erlang
+     - rabbitmq-server
+     - erlang
    state: installed
 
 - name: Start Rabbitmq service
