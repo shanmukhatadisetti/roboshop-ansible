@@ -1,12 +1,12 @@
-source common.sh
+[Unit]
+Description=Shipping Service
 
-mysql_root_password=$1
+[Service]
+User=roboshop
+Environment=CART_ENDPOINT=cart-dev.autonagar.in:8080
+Environment=DB_HOST=mysql-dev.autonagar.in
+ExecStart=/bin/java -jar /app/shipping.jar
+SyslogIdentifier=shipping
 
-if [ -z "${mysql_root_password}" ]; then
-  echo -e "\e[31mMissing MySQL Root Password argument\e[0m"
-  exit 1
-fi
-
-component=shipping
-schema_type="mysql"
-java
+[Install]
+WantedBy=multi-user.target
