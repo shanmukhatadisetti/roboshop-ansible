@@ -21,3 +21,24 @@
 #fi
 #}
 
+- name: MongoDB Schema
+  when: schema_type == "mongo"
+  block:
+    - name: install mongodb client
+      ansible.builtin.yum:
+        name: mongodb-org-shell
+        state: installed
+
+    - name: Load schema
+      ansible.builtin.shell: mongo --host mongodb-dev.autonagar.in </app/schema/${component}.js
+
+- name: Mysql Schema
+  when: schema_type == "mysql"
+  block:
+    - name: install mysql client
+      ansible.builtin.yum:
+        name: mysql
+        state: installed
+
+   - name: Load Schema
+     ansible.builtin.shell: mysql -h mysql-dev.autonagar.in -uroot -pRoboShop@1 < /app/schema/shipping.sql
