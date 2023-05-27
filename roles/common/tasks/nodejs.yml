@@ -24,4 +24,19 @@
     name: nodejs
     state: installed
 
-- name:
+- name: App Pre-requisites
+  ansible.builtin.import_tasks:
+      file: app-prereq.yml
+
+- name: Install nodejs dependencies
+  community.general.npm:
+    path: /app
+
+- name: systemd service
+  ansible.builtin.import_tasks:
+    file: systemd_setup.yml
+
+- name: Schema Service
+  ansible.builtin.import_tasks:
+    file: schema_setup
+    when: schema_setup is defined
