@@ -1,25 +1,3 @@
-#if [ "${schema_type}" == "mongo" ]; then
-#print_head "Copy MongoDB Repo File"
-#cp ${code_dir}/configs/mongodb.repo /etc/yum.repos.d/mongo.repo &>>${log_file}
-#status_check $?
-#
-#print_head "Install MongoDB Client"
-#yum install mongodb-org-shell -y &>>${log_file}
-#status_check $?
-#
-#print_head "Load Schema"
-#mongo --host mongodb-dev.autonagar.in </app/schema/${component}.js &>>${log_file}
-#status_check $?
-#elif [ "${schema_type}" == "mysql" ]; then
-#print_head "Install MySQl Client"
-#yum install mysql -y &>>${log_file}
-#status_check $?
-#
-#print_head "Load Schema"
-#mysql -h mysql-dev.autonagar.in -uroot -p${mysql_root_password} < /app/schema/shipping.sql &>>${log_file}
-#status_check $?
-#fi
-#}
 
 - name: MongoDB Schema
   when: schema_type == "mongo"
@@ -40,5 +18,5 @@
         name: mysql
         state: installed
 
-   - name: Load Schema
+   - name: Load schema
      ansible.builtin.shell: mysql -h mysql-dev.autonagar.in -uroot -pRoboShop@1 < /app/schema/shipping.sql
