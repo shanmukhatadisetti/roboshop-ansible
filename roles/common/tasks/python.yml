@@ -12,7 +12,7 @@
 
 - name: Python Dependencies
   ansible.builtin.pip:
-    name: pip3.6
+    name: pip3.6 install
 
 - name: SystemD Setup
   ansible.builtin.import_tasks:
