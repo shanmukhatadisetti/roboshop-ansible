@@ -1,9 +1,9 @@
 groups:
   - name: roboshop
     rules:
-      - alert: Server Down
+      - alert: ServerDown
         expr: up < 1
-        for: 30sec
+        for: 30s
         labels:
           severity: critical
         annotations:
