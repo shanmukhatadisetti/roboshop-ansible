@@ -1,0 +1,7 @@
+components:
+  - cart
+  - catalogue
+
+alert_files:
+  - service-doen-alert.yml
+  - alert.yml
