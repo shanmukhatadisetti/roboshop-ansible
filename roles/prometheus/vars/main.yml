@@ -3,5 +3,5 @@ components:
   - catalogue
 
 alert_files:
-  - service-doen-alert.yml
+  - service-down-alert.yml
   - alert.yml
