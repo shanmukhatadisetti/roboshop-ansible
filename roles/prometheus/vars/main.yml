@@ -4,4 +4,4 @@ components:
 
 alert_files:
   - service-down-alert.yml
-  - alert.yml
+  - alerts.yml
