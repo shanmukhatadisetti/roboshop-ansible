@@ -6,4 +6,4 @@
 - name: Run Filebeat
   when: filebeat
   ansible.builtin.import_tasks:
-    file: filebeat
+    file: filebeat.yml
