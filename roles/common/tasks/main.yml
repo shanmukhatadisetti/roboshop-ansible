@@ -7,8 +7,12 @@
     tasks_from: exporter
   when: node_exporter
 
+- name: print 
+  debug:
+    msg: "var filebeat - {{ filebeat }}"
+
 - name: Install Filebeat
   ansible.builtin.import_role:
     name: elk
     tasks_from: filebeat
-  when: filebeat | bool
+  when: filebeat 
