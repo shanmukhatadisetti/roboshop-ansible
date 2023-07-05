@@ -1,2 +1,2 @@
-filebeat: true
+filebeat: false
 elk: false
