@@ -9,7 +9,7 @@
 
 - name: print 
   debug:
-    msg: "var filebeat - {{ filebeat }}"
+    msg: "var filebeat - {{ filebeat | bool }}"
 
 - name: Install Filebeat
   ansible.builtin.import_role:
