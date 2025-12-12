@@ -1,5 +1,5 @@
 - name: Mongodb server setup
-  locals: mongodb
+  hosts: mongodb
   become: yes
   tasks:
   - name: copy mongodb repo
@@ -14,7 +14,7 @@
 
   - name: start mongodb service
     ansible.builtin.service:
-    name: mongod
-    state: started
-    enabled: yes
+      name: mongod
+      state: started
+      enabled: yes
 
