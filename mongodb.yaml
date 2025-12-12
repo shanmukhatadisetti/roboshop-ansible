@@ -1,5 +1,5 @@
 - name: Mongodb server setup
-  locals: mongodb.autonagar.in
+  locals: mongodb
   become: yes
   tasks:
   - name: copy mongodb repo
